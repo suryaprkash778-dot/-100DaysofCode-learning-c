@@ -1,0 +1,16 @@
+//Q8: Write a program to find and display the sum of the first n natural numbers.
+
+#include<stdio.h>
+int main()
+{
+    
+    int a=1,d=1,n,sum;
+    float b ;
+    printf("enter a number till which you want sum of natural numbers\n");
+    scanf("%d",&n);
+    b = (float)n/2;
+    sum =b*(2*a + (n-1)*d);
+    printf("the sum of first %d natural numbers is %d\n",n,sum);
+
+    return 0;
+}
