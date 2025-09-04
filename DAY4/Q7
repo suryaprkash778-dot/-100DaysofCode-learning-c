@@ -5,13 +5,13 @@ int main()
 {
     
     int x,y,z;
-    printf("enter first digit\n");
+    printf("enter first number\n");
     scanf("%d",&x);
-    printf("enter second digit\n");
+    printf("enter second number\n");
     scanf("%d",&y);
-    printf("your two digit number is: %d%d\n",x,y);
+    printf("your  numbers before swapping are x=%d,y=%d\n",x,y);
     
-    printf("your two digit number after swaping digits is: %d%d\n",y,x);
+    printf("your  numbers after swaping digits are x=%d,y=%d\n",y,x);
     
 
     return 0;
