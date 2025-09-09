@@ -1,1 +1,22 @@
+//Q22: Write a program to find profit or loss percentage given cost price and selling price.
+
+#include<stdio.h>
+int main()
+{
+    float cp,sp,net,percentage;
+    printf("enter cost price and selling price for your goods: \n");
+    scanf("%f %f",&cp,&sp);
+    net = sp-cp;
+    percentage = net/cp*100;
+    if(percentage>0){
+        printf("profit %.2f%%",percentage);
+    }
+    else if(percentage<0){
+        percentage*(-1);
+        printf("loss %.2f%%",percentage);
+    }
+
+    return 0;
+      
+}
 
