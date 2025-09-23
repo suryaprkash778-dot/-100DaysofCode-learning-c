@@ -1,1 +1,30 @@
+/*Q23: Write a program to calculate library fine based on late days as follows: 
+First 5 days late: ₹2/day 
+Next 5 days late: ₹4/day 
+Next 20 days days late: ₹6/day 
+More than 30 days: Membership Cancelled.*/
 
+#include<stdio.h>
+int main()
+{  int n,total_f;
+    printf("How many days are you late from your due date?\n",n);
+    scanf("%d",&n);
+    if(n<=5){
+        total_f=2*n;
+        printf("Fine %d rupees\n",total_f);
+    }
+    else if( n>5 && n<=10){
+        total_f=10+4*(n-5);
+        printf("Fine %d rupees\n",total_f);
+    }
+      else if( n>10 && n<=30){
+        total_f=30+6*(n-10);
+        printf("Fine %d rupees\n",total_f);
+    }
+     else{
+        printf("Membership cancelled!\n");
+    }
+    return 0;
+
+
+}
