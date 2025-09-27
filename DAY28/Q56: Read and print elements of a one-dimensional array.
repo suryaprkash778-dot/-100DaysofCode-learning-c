@@ -1,0 +1,18 @@
+//Q56: Read and print elements of a one-dimensional array.
+#include <stdio.h>
+void main(){
+    int size,arr[1000],*j;
+    printf("enter size of array ");
+    scanf("%d",&size);
+    for(int i=0;i<size;i++){
+        printf("enter a number in array\n");
+        scanf("%d",&arr[i]);
+    }
+    j=&arr[0];
+    for(int i=0;i<size;i++){
+        printf("%d ",*j);
+        j++;
+    }
+}
+
+
