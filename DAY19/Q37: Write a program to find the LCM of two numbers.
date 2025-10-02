@@ -1,0 +1,30 @@
+//Q37: Write a program to find the LCM of two numbers.
+#include <stdio.h>
+void main() {
+    int n1, n2, lcm = 1;
+    printf("Enter two numbers\n");
+    scanf("%d %d", &n1, &n2);
+
+    int num1 = n1;
+    int num2 = n2;
+    int i = 2;
+
+    while (num1 > 1 || num2 > 1) {
+        if (num1 % i == 0 && num2 % i == 0) {
+            lcm *= i;
+            num1 /= i;
+            num2 /= i;
+        } else if (num1 % i == 0) {
+            lcm *= i;
+            num1 /= i;
+        } else if (num2 % i == 0) {
+            lcm *= i;
+            num2 /= i;
+        } else {
+            i++;
+        }
+    }
+    printf("LCM of %d and %d is: %d\n", n1, n2, lcm);
+}
+
+
