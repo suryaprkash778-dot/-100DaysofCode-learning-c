@@ -1,0 +1,43 @@
+//Q39: Write a program to find the product of odd digits of a number.
+#include <stdio.h>
+int reverse(int n){
+    int rev = 0;
+    while(n>0){ 
+    rev = rev*10 + n%10;
+    n/=10;
+    }
+    return rev;
+}
+void main() {
+    int pro=1,n;
+    printf("enter a number\n");
+    scanf("%d",&n);
+    int num = n;
+    while(num>0){
+        int last_digit = num%10;
+        num/=10;
+        if(last_digit%2!=0){
+            pro*=last_digit;
+        }
+    }
+    printf("%d",pro);
+    int reversed_num = reverse(n);
+    int first = 1;
+    while(reversed_num>0){
+        int last_digit = reversed_num%10;
+        reversed_num/=10;
+        if(last_digit%2!=0){
+            if(first){
+                printf("(%d",last_digit);
+                first = 0;
+            }else{
+                  printf("*%d",last_digit);
+            }
+        }
+    }
+    printf(")");
+}
+
+
+
+
