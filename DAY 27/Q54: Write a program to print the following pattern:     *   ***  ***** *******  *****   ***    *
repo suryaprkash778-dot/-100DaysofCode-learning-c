@@ -1,0 +1,36 @@
+/*Q54: Write a program to print the following pattern:
+
+   *
+  ***
+ *****
+*******
+ *****
+  ***
+   *
+*/
+#include <stdio.h>
+int main(){
+    int k=3;
+    for(int i=1;i<=7;i+=2){
+        for(int space=0;space<=k;space++){
+            printf(" ");
+        }
+        for(int j=0;j<i;j++){
+            printf("*");
+        }
+        printf("\n");
+        k--;
+    }
+    k=1;
+    for(int i=5;i>=1;i-=2){
+        for(int space=0;space<=k;space++){
+            printf(" ");
+        }
+        for(int j=0;j<i;j++){
+            printf("*");
+        }
+        printf("\n");
+        k++;
+    }
+    return 0;
+}
