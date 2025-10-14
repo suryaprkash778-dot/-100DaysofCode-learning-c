@@ -1,0 +1,16 @@
+//Q44: Write a program to find the sum of the series: 1 + 3/4 + 5/6 + 7/8 + … up to n terms.
+#include <stdio.h>
+int main(){
+    int n,i=1;
+    float sum=1,term;
+    printf("enter a number till which you want the sum of series\n");
+    scanf("%d",&n);
+    while(i<n){
+        term =(float)(2*i+1)/(2*i+2);
+        sum+=term;
+        i++;
+    }
+    printf("Approximate sum: %.2f",sum);
+
+    return 0;
+}
