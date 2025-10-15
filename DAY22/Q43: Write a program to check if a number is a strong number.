@@ -1,0 +1,24 @@
+//Q43: Write a program to check if a number is a strong number.
+#include<stdio.h>
+int factorial(int n){
+    if(n==1 || n==0){
+        return 1;
+    }else{
+        int fac = n*factorial(n-1);
+        return fac;
+    }
+}
+int main(){
+    int num,sum=0;
+    printf("enter a number\n");
+    scanf("%d",&num);
+    int temp = num;
+    while(temp>0){
+        int last_digit = temp%10;
+        temp/=10;
+        sum += factorial(last_digit);
+    }
+    sum==num?printf("Strong number\n"):printf("Not strong number\n");
+    return 0;
+}
+
