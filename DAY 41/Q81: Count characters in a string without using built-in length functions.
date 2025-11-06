@@ -1,0 +1,18 @@
+//Q81: Count characters in a string without using built-in length functions.
+#include<stdio.h>
+int xstrlen(char *arr){
+    int length = 0;
+    while(*arr != '\0'){
+        length++;
+        arr++;
+    }
+    return length;
+}
+int main() {
+    char name[20];
+    printf("enter your name\n");
+    gets(name);
+    int len = xstrlen(name);
+    printf("%d\n",len);
+    return 0;
+}
