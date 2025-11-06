@@ -1,0 +1,15 @@
+//Q82: Print each character of a string on a new line.
+#include<stdio.h>
+void printstr(char *arr){
+    while(*arr != '\0'){
+        printf("%c\n",*arr);
+        arr++;
+    }
+}
+int main() {
+    char str[20];
+    printf("enter a string\n");
+    gets(str);
+    printstr(str);
+    return 0;
+}
