@@ -1,0 +1,19 @@
+//Q84: Convert a lowercase string to uppercase without using built-in functions.
+#include<stdio.h>
+void change_case(char *arr){
+    while(*arr != '\0'){
+        if(*arr>=97 && *arr<=122){
+            *arr-=32;
+        }
+        arr++;
+    }
+}
+int main() {
+    int length=0,vowel=0;
+    char str[100];
+    printf("enter a string in lowercase\n");
+    fgets(str,sizeof(str),stdin);
+    change_case(str);
+    printf("%s",str);
+    return 0;
+}
