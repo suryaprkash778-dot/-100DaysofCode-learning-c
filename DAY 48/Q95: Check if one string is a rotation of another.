@@ -1,0 +1,39 @@
+//Q95: Check if one string is a rotation of another.
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+int isRotation(const char *s1, const char *s2) {
+    int len1 = strlen(s1);
+    int len2 = strlen(s2);
+    if (len1 != len2 || len1 == 0)
+        return 0;
+
+    char *concat = (char *)malloc(2 * len1 + 1);
+    if (!concat) {
+        perror("Memory allocation failed");
+        return 0;
+    }
+    strcpy(concat, s1);
+    strcat(concat, s1);
+    int result = strstr(concat, s2) != NULL;
+    free(concat);
+    return result;
+}
+int main() {
+    char s1[100], s2[100];
+
+    printf("Enter first string: ");
+    fgets(s1, sizeof(s1), stdin);
+    s1[strcspn(s1, "\n")] = '\0';
+
+    printf("Enter second string: ");
+    fgets(s2, sizeof(s2), stdin);
+    s2[strcspn(s2, "\n")] = '\0';
+
+    if (isRotation(s1, s2))
+        printf("rotation \n");
+    else
+        printf("NOT rotation\n");
+
+    return 0;
+}
