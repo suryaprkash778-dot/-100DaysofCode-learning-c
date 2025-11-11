@@ -1,0 +1,42 @@
+//Q66: Insert an element in a sorted array at the appropriate position.
+#include <stdio.h>
+void sortArray(int arr[], int n) {
+    for (int i = 1; i < n; i++) {
+        int key = arr[i];
+        int j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+}
+int main() {
+    int n, i, pos = 0, num;
+    scanf("%d", &n);
+
+    int arr[n + 1]; 
+
+    for (i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+
+    sortArray(arr, n);
+
+    scanf("%d", &num);
+
+    while (pos < n && arr[pos] < num)
+        pos++;
+
+    for (i = n; i > pos; i--)
+        arr[i] = arr[i - 1];
+
+    arr[pos] = num;
+    n++;
+
+    for (i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+
+    printf("\n");
+    return 0;
+}
+
