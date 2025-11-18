@@ -1,0 +1,33 @@
+/*Q104: Write a Program to take a positive integer n as input, 
+and find the pivot integer x such that the sum of all elements between 
+1 and x inclusively equals the sum of all elements between x and n inclusively.
+ Print the pivot integer x. If no such integer exists, print -1.
+  Assume that it is guaranteed that there will be at most one pivot integer for the given input.*/
+
+#include <stdio.h>
+#include <math.h>
+int findPivotInteger(int n) {
+    int totalSum = n * (n + 1) / 2;
+    // Try to find x such that sum(1 to x) == sum(x to n)
+    // That means: sum(1 to x) = totalSum - sum(1 to x-1)
+    // So, we solve: x*(x+1)/2 = totalSum - (x-1)*x/2
+    // Simplifies to: x^2 = totalSum
+
+    int x = (int)sqrt(totalSum);
+    if (x * x == totalSum) {
+        return x;
+    }
+    return -1;
+}
+int main() {
+    // Sample Test Case 1
+    int n1 = 8;
+    printf("Output 1: %d\n", findPivotInteger(n1));
+    // Sample Test Case 2
+    int n2 = 1;
+    printf("Output 2: %d\n", findPivotInteger(n2));
+    // Sample Test Case 3
+    int n3 = 4;
+    printf("Output 3: %d\n", findPivotInteger(n3));
+    return 0;
+}
