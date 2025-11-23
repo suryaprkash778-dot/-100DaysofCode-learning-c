@@ -1,0 +1,37 @@
+//Q130: Store multiple student records (name, roll number, marks) into a file using fprintf(). Then read them using fscanf() and display each record.
+#include <stdio.h>
+int main() {
+    FILE *fp;
+    char name[50];
+    int roll, marks;
+    int n, i;
+    // Ask how many student records to store
+    printf("Enter number of students: ");
+    scanf("%d", &n);
+    // Open file in write mode
+    fp = fopen("students.txt", "w");
+    if (fp == NULL) {
+        printf("Error! Could not create file.\n");
+        return 1;
+    }
+    // Take input and write to file
+    for (i = 0; i < n; i++) {
+        printf("Enter name, roll number, and marks for student %d:\n", i + 1);
+        scanf("%s %d %d", name, &roll, &marks);
+        fprintf(fp, "%s %d %d\n", name, roll, marks);
+    }
+    fclose(fp);
+    // Open file in read mode
+    fp = fopen("students.txt", "r");
+    if (fp == NULL) {
+        printf("Error! Could not open file.\n");
+        return 1;
+    }
+    printf("\nStored Student Records:\n");
+    // Read and display records
+    while (fscanf(fp, "%s %d %d", name, &roll, &marks) == 3) {
+        printf("Name: %s | Roll: %d | Marks: %d\n", name, roll, marks);
+    }
+    fclose(fp);
+    return 0;
+}
