@@ -1,0 +1,25 @@
+//Q131: Create an enumeration for days (SUNDAY to SATURDAY) and print each day with its integer value.
+#include <stdio.h>
+// Define enumeration for days
+enum Days {
+    SUNDAY,
+    MONDAY,
+    TUESDAY,
+    WEDNESDAY,
+    THURSDAY,
+    FRIDAY,
+    SATURDAY
+};
+int main() {
+    // Array of day names for printing
+    const char* dayNames[] = {
+        "SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY",
+        "THURSDAY", "FRIDAY", "SATURDAY"
+    };
+    // Print each day with its integer value
+    for (int i = SUNDAY; i <= SATURDAY; i++) {
+        printf("%s = %d\n", dayNames[i], i);
+    }
+    return 0;
+}
+
