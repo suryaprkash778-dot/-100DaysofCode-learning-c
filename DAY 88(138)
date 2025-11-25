@@ -1,0 +1,18 @@
+//Q138: Print all enum names and integer values using a loop.
+#include <stdio.h>
+// Define enum
+typedef enum {
+    RED,
+    YELLOW,
+    GREEN,
+    ENUM_COUNT   // helper to know total number of enums
+} Color;
+int main() {
+    // Parallel array of enum names
+    const char *colorNames[] = {"RED", "YELLOW", "GREEN"};
+    // Loop through all enum values
+    for (int i = 0; i < ENUM_COUNT; i++) {
+        printf("%s=%d\n", colorNames[i], i);
+    }
+    return 0;
+}
