@@ -1,0 +1,41 @@
+//Q136: Use enum to represent menu choices (ADD, SUBTRACT, MULTIPLY) and perform operations using switch.
+#include <stdio.h>
+#include <string.h>
+// Define enum for menu choices
+typedef enum {
+    ADD,
+    SUBTRACT,
+    MULTIPLY,
+    INVALID
+} Operation;
+// Function to map string to enum
+Operation getOperation(char *opStr) {
+    if (strcmp(opStr, "ADD") == 0) return ADD;
+    else if (strcmp(opStr, "SUBTRACT") == 0) return SUBTRACT;
+    else if (strcmp(opStr, "MULTIPLY") == 0) return MULTIPLY;
+    else return INVALID;
+}
+int main() {
+    char opStr[20];
+    int a, b;
+    // Input format: OPERATION number1 number2
+    scanf("%s %d %d", opStr, &a, &b);
+    Operation op = getOperation(opStr);
+    int result;
+    switch (op) {
+        case ADD:
+            result = a + b;
+            break;
+        case SUBTRACT:
+            result = a - b;
+            break;
+        case MULTIPLY:
+            result = a * b;
+            break;
+        default:
+            printf("Invalid Operation\n");
+            return 0;
+    }
+    printf("%d\n", result);
+    return 0;
+}
