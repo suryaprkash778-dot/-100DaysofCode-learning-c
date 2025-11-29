@@ -9,7 +9,7 @@ struct Student {
 };
 int main() {
     // Dynamically allocate memory for one Student
-    struct Student *s = (struct Student *)malloc(sizeof(struct Student));
+    struct Student *s = (struct Student *)malloc(sizeof(struct Student));// pointer to struct
     if (s == NULL) {
         printf("Memory allocation failed!\n");
         return 1;
