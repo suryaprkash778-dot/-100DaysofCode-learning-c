@@ -1,22 +1,21 @@
 //Q62: Reverse an array without taking extra space.
-#include <stdio.h>
-#include <stdlib.h>
-void reverse(int arr[],int size){
+#include<stdio.h>
+#include<stdlib.h>
+void reverse(int *arr,int size){
     int temp;
     for(int i=0;i<size/2;i++){
-            temp=arr[i];
-            arr[i]=arr[size-i-1];
-            arr[size-i-1]=temp;
+        temp=arr[i];
+        arr[i]=arr[size-i-1];
+        arr[size-i-1]=temp;
     }
 }
-int main() {
-    int size,search_value;
-    int *arr;
-    printf("enter size of array\n");
+int main(){
+    int size,*arr;
+    printf("enter size of array: ");
     scanf("%d",&size);
-    printf("enter numbers in array\n");
     arr=(int*)malloc(size*sizeof(int));
-    for(int i=0;i<size;i++){
+    printf("enter numbers in array: ");
+    for(int i=0; i<size;i++){
         scanf("%d",&arr[i]);
     }
     reverse(arr,size);
@@ -26,4 +25,3 @@ int main() {
     free(arr);
     return 0;
 }
-
