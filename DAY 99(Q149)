@@ -1,7 +1,7 @@
 //Q149: Use malloc() to allocate structure memory dynamically and print details.
 #include <stdio.h>
 #include <stdlib.h>
-// Define Student structure
+// Define  structure
 struct Student {
     char name[50];
     int roll;
